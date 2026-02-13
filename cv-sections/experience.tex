@@ -18,24 +18,42 @@
 {May 2019 - Now} % Date(s)
 { % Description(s) of tasks/responsibilities
 \begin{cvitems}
-\item {Design and develop network adapter process for camera application features}
-\item {Implement notifications for various user-facing features}
+\item {Spearheaded a high-performance, flexible camera architecture rewrite designed for longevity and reuse}
   \begin{itemize}
-      \item Battery status notification
-      \item Detection notification
+    \item {Adopted as the foundational architecture for the latest flagship wired Nest Cam products, shipping to millions of users}
+    \item {Migrated legacy Nest devices to the Google Home app, enabling modern features on older hardware}
+    \item {Enabled on-device ML pipelines, unlocking event-based recording to significantly reduce cloud ingestion costs}
+    \item {Optimized background subtraction algorithms using NEON (SIMD) for limited embedded resources}
   \end{itemize}
-\item {Optimize notifications and boot latency on battery products}
-\item {Profile and optimize video encoding pipeline (10\% CPU, 50\% latency)}
+\item {Led the Nest Hello video pipeline rewrite, increasing framerate by 50\% (20fps $\rightarrow$ 30fps)}
   \begin{itemize}
-  \item {Implement arena buffer for optimal cache locality}
-  \item {Implement cross-process shared\_memory consumer/producer mechanism}
+    \item {Designed a hybrid Face Identification system: computing biometric signatures on-device for privacy while matching in the cloud}
+    % these 2 items are not for Nest Hello but the battery cameras
+    % \item {Profiled and optimized the video encoding pipeline (10\% CPU reduction, 50\% latency improvement)}
+    % \item {Implemented arena buffers for optimal cache locality and shared\_memory mechanisms for zero-copy data transfer}
   \end{itemize}
-%\begin{itemize}
-%    \item {Multi-process architecture using }
-%\end{itemize}
-\item {Integrate GStreamer to our build toolchain and in-house testing tools}
-\item {Port our code base to GN build system (chromium)}
-\item {Enable compiling our code base for the x86 platform (from Arm)}
+\item {Designed the Video Hardware Abstraction Layer (HAL) to decouple application logic from hardware}
+  \begin{itemize}
+    \item {Accelerated New Product Introduction (NPI) by enabling vendor development in parallel}
+    \item {Architected the Battery HAL foundation, unlocking low-power capabilities for future battery-powered products}
+    \item {Implemented an Android-compatible HAL, porting the proprietary camera stack to run on any Android-based product}
+  \end{itemize}
+\item {Solved critical reliability issues in device pairing and setup}
+  \begin{itemize}
+    \item {Reverse-engineered the undocumented pairing protocol to build a custom stress-testing tool}
+    \item {Identified and fixed intricate paging errors in gzip blob handling that caused setup failures}
+  \end{itemize}
+\item {Designed and implemented an on-demand cloud transcoding infrastructure for heterogeneous client support}
+  \begin{itemize}
+    \item {Integrated dynamic H.264 manifest generation into the existing streaming service}
+    \item {Built the real-time transcoding pipeline to convert H.265 media segments to H.264 on-demand}
+  \end{itemize}
+\item {Modernized the build and development infrastructure}
+  \begin{itemize}
+    \item {Ported the codebase to the GN build system (Chromium), enabling faster incremental builds}
+    \item {Enabled x86 compilation for the ARM-based codebase, allowing developers to run and test the camera stack on their workstations}
+    \item {Integrated GStreamer into the toolchain for standardized media handling}
+  \end{itemize}
 \end{cvitems}
 }
 
@@ -51,7 +69,6 @@
 \item {Designed audio/video playback synchronization}
 \item {Implemented the playback buffering mechanism}
 \item {Designed and implemented an asynchronous interface to interact with an in-house library}
-\item {Participated in the migration of the application UI from QML to React}
 \end{cvitems}
 }
 
