@@ -18,36 +18,44 @@
 {May 2019 - Now} % Date(s)
 { % Description(s) of tasks/responsibilities
 \begin{cvitems}
-\item {Spearheaded a high-performance, flexible camera architecture rewrite designed for longevity and reuse}
+\item {Played a key role in the architectural rewrite of a high-performance, flexible camera architecture designed for longevity and reuse}
   \begin{itemize}
     \item {Adopted as the foundational architecture for the latest flagship wired Nest Cam products, shipping to millions of users}
     \item {Migrated legacy Nest devices to the Google Home app, enabling modern features on older hardware}
-    \item {Enabled on-device ML pipelines, unlocking event-based recording to significantly reduce cloud ingestion costs}
-    \item {Optimized background subtraction algorithms using NEON (SIMD) for limited embedded resources}
-  \end{itemize}
-\item {Led the Nest Hello video pipeline rewrite, increasing framerate by 50\% (20fps $\rightarrow$ 30fps)}
-  \begin{itemize}
-    \item {Designed a hybrid Face Identification system: computing biometric signatures on-device for privacy while matching in the cloud}
-    % these 2 items are not for Nest Hello but the battery cameras
-    % \item {Profiled and optimized the video encoding pipeline (10\% CPU reduction, 50\% latency improvement)}
-    % \item {Implemented arena buffers for optimal cache locality and shared\_memory mechanisms for zero-copy data transfer}
+    \item {Enabled on-device ML pipelines, unlocking event-based recording to significantly reduce cloud costs (4x)}
+    \item {Interfaced with legal and privacy stakeholders to establish guidelines for software licensing and data logging, ensuring product compliance and mitigating organizational risk}
   \end{itemize}
 \item {Designed the Video Hardware Abstraction Layer (HAL) to decouple application logic from hardware}
   \begin{itemize}
     \item {Accelerated New Product Introduction (NPI) by enabling vendor development in parallel}
     \item {Architected the Battery HAL foundation, unlocking low-power capabilities for future battery-powered products}
+      \begin{itemize}
+        \item {Profiled and optimized our battery product's video encoding pipeline (10\% CPU reduction, 50\% latency improvement)}
+        \item {Implemented arena buffers for optimal cache locality and shared\_memory mechanisms for zero-copy data transfer in a multi-process architecture}
+        \item {Wrote the Event Based Recording logic in Battery product, directly improving user experience through intelligent alerts}
+          % TODO add how to directly impact how users view the data coming out of our cameras
+      \end{itemize}
     \item {Implemented an Android-compatible HAL, porting the proprietary camera stack to run on any Android-based product}
+  \end{itemize}
+\item {Led the Nest Hello architectural migration}
+  \begin{itemize}
+    \item {Designed a hybrid Face Identification system: computing biometric signatures on-device for privacy while matching in the cloud}
+    \item {Implemented an improved video pipeline, increasing framerate by 50\% (20fps $\rightarrow$ 30fps)}
+    \item {Optimized background subtraction algorithms using NEON (SIMD) for limited embedded resources, lowering time from 80ms to 11ms per frame}
+    \item {Investigate intricate system wide freeze that would disconnect our Webrtc feed}
   \end{itemize}
 \item {Solved critical reliability issues in device pairing and setup}
   \begin{itemize}
-    \item {Reverse-engineered the undocumented pairing protocol to build a custom stress-testing tool}
+    \item {Built a custom stress testing tool that connects to the devices using Bluetooth and runs the pairing protocol}
     \item {Identified and fixed intricate paging errors in gzip blob handling that caused setup failures}
+    \item {Save QA engineering resources by automating the pairing regression testing}
   \end{itemize}
 \item {Designed and implemented an on-demand cloud transcoding infrastructure for heterogeneous client support}
   \begin{itemize}
     \item {Integrated dynamic H.264 manifest generation into the existing streaming service}
     \item {Built the real-time transcoding pipeline to convert H.265 media segments to H.264 on-demand}
   \end{itemize}
+  % Add an item about me writing the Event Based Recording logic in Battery product which has later been re-used in the architecture rewrite
 \item {Modernized the build and development infrastructure}
   \begin{itemize}
     \item {Ported the codebase to the GN build system (Chromium), enabling faster incremental builds}
@@ -125,4 +133,5 @@
 %\end{cvitems}
 %}
 
+\vspace{1mm}
 \end{cventries}
