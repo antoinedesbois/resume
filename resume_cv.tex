@@ -24,11 +24,12 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt, a4paper]{awesome-cv} % A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[10pt, a4paper]{awesome-cv} % A4 paper size by default, use 'letterpaper' for US letter
 
-\geometry{left=1.5cm, top=1cm, right=1.5cm, bottom=1cm, footskip=0cm} % Configure page margins with geometry
+\geometry{left=1.5cm, top=1cm, right=1.0cm, bottom=1cm, footskip=0cm} % Configure page margins with geometry
 
 \renewcommand{\acvSectionContentTopSkip}{0.5mm} % Reduce space between section title and first subtitle
+%\setlist{nosep} % Remove vertical spacing in all lists
 
 \fontdir[fonts/] % Specify the location of the included fonts
 
@@ -44,11 +45,18 @@
 
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad} % If you would like to change the social information separator from a pipe (|) to something else
 
-% Command for internal links - makes the link text colored (visible) only if \isinternal is defined
-\ifdefined\isinternal
+% Command for internal links - colored only if \isenabledgoogle is defined
+\ifdefined\isenabledgoogle
   \newcommand{\internalLink}[2]{\href{#2}{\textcolor{awesome-skyblue}{#1}}}
 \else
   \newcommand{\internalLink}[2]{#1}
+\fi
+
+% Command for external links - colored only if \isenabledexternal is defined
+\ifdefined\isenabledexternal
+  \newcommand{\externalLink}[2]{\href{#2}{\textcolor{awesome-skyblue}{#1}}}
+\else
+  \newcommand{\externalLink}[2]{#1}
 \fi
 
 %----------------------------------------------------------------------------------------
@@ -74,7 +82,7 @@
 % \position{Software Developer} % Your expertise/fields {\enskip\cdotp\enskip}Security Expert
 %\quote{``Make the change that you want to see in the world."} % A quote or statement
 
-% \makecvfooter{\today}{Antoine Desbois}{\thepage} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
+\makecvfooter{}{References available upon request.}{} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
 
 %----------------------------------------------------------------------------------------
 

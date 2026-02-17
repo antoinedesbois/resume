@@ -1,15 +1,18 @@
 LATEXMK = latexmk
 LATEXMK_FLAGS = -xelatex
 
-.PHONY: all clean resume cover_letter
+.PHONY: all clean resume_nolink resume_external resume_google cover_letter
 
-all: resume resume_internal
+all: resume_nolink resume_external resume_google cover_letter
 
-resume:
-	$(LATEXMK) $(LATEXMK_FLAGS) resume_cv.tex
+resume_nolink:
+	$(LATEXMK) $(LATEXMK_FLAGS) -jobname=resume_nolink resume_cv.tex
 
-resume_internal:
-	$(LATEXMK) -xelatex="xelatex %O '\def\isinternal{1} \input{%S}'" -jobname=resume_internal resume_cv.tex
+resume_external:
+	$(LATEXMK) -xelatex="xelatex %O '\def\isenabledexternal{1} \input{%S}'" -jobname=resume_external resume_cv.tex
+
+resume_google:
+	$(LATEXMK) -xelatex="xelatex %O '\def\isenabledgoogle{1} \def\isenabledexternal{1} \input{%S}'" -jobname=resume_google resume_cv.tex
 
 cover_letter:
 	$(LATEXMK) $(LATEXMK_FLAGS) cover_letter.tex
