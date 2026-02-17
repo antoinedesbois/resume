@@ -47,23 +47,23 @@
     \item {Architected the \internalLink{Battery HAL foundation}{\urlBatteryHal}, unlocking low-power capabilities for future battery-powered products}
       \begin{itemize}
         \item {Profiled and optimized our battery product's video encoding pipeline (10\% CPU reduction, 50\% latency improvement)}
-        \item {Implemented arena buffers for optimal cache locality and shared\_memory mechanisms for zero-copy data transfer in a multi-process architecture}
-        \item {Wrote the Event Based Recording logic in Battery product, directly improving user experience through intelligent alerts}
+        \item {Implemented arena buffers for optimal cache locality and shared memory mechanisms for zero-copy data transfer in a multi-process architecture}
+        \item {Wrote the Event-Based Recording logic in Battery product, directly improving user experience through intelligent alerts}
       \end{itemize}
-    \item {Designed and prototyped \internalLink{low powered long lived connection}{\urlLowPowerDoc} to support cloud triggered wake}
+    \item {Designed and prototyped a \internalLink{low-power, long-lived connection}{\urlLowPowerDoc} to support cloud triggered wake}
   \end{itemize}
 \item {\internalLink{Led the Nest Hello architectural migration}{\urlNestHelloCert}}
   \begin{itemize}
     \item {Designed a hybrid Face Identification system: computing biometric signatures on-device for privacy while matching in the cloud}
     \item {Implemented an improved video pipeline, increasing framerate by 50\% (20fps $\rightarrow$ 30fps)}
     \item {Optimized background subtraction algorithms using NEON (SIMD) for limited embedded resources, lowering time from 80ms to 11ms per frame}
-    \item {Investigate intricate system wide \internalLink{freeze}{\urlFreezeCert} that would disconnect our Webrtc feed}
+    \item {Investigated intricate system-wide \internalLink{freeze}{\urlFreezeCert} that would disconnect our Webrtc feed}
   \end{itemize}
 \item {Solved critical reliability issues in device pairing and setup}
   \begin{itemize}
     \item {Built a custom stress testing \internalLink{tool}{\urlCastR} that connects to the devices using Bluetooth and runs the pairing protocol}
     \item {Identified and fixed intricate paging errors in gzip blob handling that caused setup failures}
-    \item {Save QA engineering resources by automating the pairing regression testing}
+    \item {Saved QA engineering resources by automating the pairing regression testing}
   \end{itemize}
 \item {Created a live view test \internalLink{client}{\urlStreamR} using webrtc}
   \begin{itemize}
