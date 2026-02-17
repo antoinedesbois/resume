@@ -21,21 +21,21 @@
 \item {Played a key role in the architectural rewrite of a high-performance, flexible camera architecture designed for longevity and reuse}
   \begin{itemize}
     \item {Adopted as the foundational architecture for the latest flagship wired Nest Cam products, shipping to millions of users}
-    \item {Migrated legacy Nest devices to the Google Home app, enabling modern features on older hardware}
-    \item {Enabled on-device ML pipelines, unlocking event-based recording to significantly reduce cloud costs (4x)}
-    \item {Interfaced with legal and privacy stakeholders to establish guidelines for software licensing and data logging, ensuring product compliance and mitigating organizational risk}
-  \end{itemize}
-\item {Designed the Video Hardware Abstraction Layer (HAL) to decouple application logic from hardware}
-  \begin{itemize}
     \item {Accelerated New Product Introduction (NPI) by enabling vendor development in parallel}
-    \item {Architected the Battery HAL foundation, unlocking low-power capabilities for future battery-powered products}
+    \item {Enabled the migration of legacy Nest devices to the Google Home app, enabling modern features on older hardware}
+    \item {Enabled on-device ML pipelines, unlocking event-based recording to significantly reduce cloud costs (4x)}
+    \item {Implemented an Android-compatible HAL, porting the proprietary camera stack to run on any Android-based product}
+    \item {\internalLink{Interfaced with legal and privacy stakeholders}{https://gthanks.googleplex.com/certificate?cid=d6c60ed7-d3ab-4431-b15c-968ced87fcce} to establish guidelines for software licensing and data logging, ensuring product compliance and mitigating organizational risk} % https://gthanks.googleplex.com/certificate?cid=d6c60ed7-d3ab-4431-b15c-968ced87fcce
+  \end{itemize}
+\item {Spearheaded the software architecture for the next generation of battery cameras} % go/photon-battery-cams
+  \begin{itemize}
+    \item {\internalLink{Architected the Battery HAL foundation}{http://go/photon-battery-cam-hal}, unlocking low-power capabilities for future battery-powered products}
       \begin{itemize}
         \item {Profiled and optimized our battery product's video encoding pipeline (10\% CPU reduction, 50\% latency improvement)}
         \item {Implemented arena buffers for optimal cache locality and shared\_memory mechanisms for zero-copy data transfer in a multi-process architecture}
         \item {Wrote the Event Based Recording logic in Battery product, directly improving user experience through intelligent alerts}
-          % TODO add how to directly impact how users view the data coming out of our cameras
       \end{itemize}
-    \item {Implemented an Android-compatible HAL, porting the proprietary camera stack to run on any Android-based product}
+    \item {Designed and prototyped low powered long lived connection to support cloud triggered wake} % https://docs.google.com/document/d/19ytlf6zv2RVYXBHw9NdA28U_ejtHkNosxkH3s2WrfSk/edit?tab=t.0#heading=h.c0uts5ftkk58
   \end{itemize}
 \item {Led the Nest Hello architectural migration}
   \begin{itemize}
@@ -49,6 +49,11 @@
     \item {Built a custom stress testing tool that connects to the devices using Bluetooth and runs the pairing protocol}
     \item {Identified and fixed intricate paging errors in gzip blob handling that caused setup failures}
     \item {Save QA engineering resources by automating the pairing regression testing}
+  \end{itemize}
+\item {Created a live view test client using webrtc}
+  \begin{itemize}
+    \item Automated our live feed reliability testing
+    \item Automated metrics collection (framerate, bitrate) to spot possible regression
   \end{itemize}
 \item {Designed and implemented an on-demand cloud transcoding infrastructure for heterogeneous client support}
   \begin{itemize}

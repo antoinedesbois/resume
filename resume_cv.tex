@@ -44,6 +44,13 @@
 
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad} % If you would like to change the social information separator from a pipe (|) to something else
 
+% Command for internal links - makes the link text colored (visible) only if \isinternal is defined
+\ifdefined\isinternal
+  \newcommand{\internalLink}[2]{\href{#2}{\textcolor{awesome-skyblue}{#1}}}
+\else
+  \newcommand{\internalLink}[2]{#1}
+\fi
+
 %----------------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
