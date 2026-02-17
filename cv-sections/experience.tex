@@ -59,6 +59,11 @@
     \item {Optimized background subtraction algorithms using NEON (SIMD) for limited embedded resources, lowering time from 80ms to 11ms per frame}
     \item {Investigated intricate system-wide \internalLink{freeze}{\urlFreezeCert} that would disconnect our Webrtc feed}
   \end{itemize}
+\item {Designed and implemented an on-demand \internalLink{cloud transcoding}{\urlVideoTranscoding} infrastructure for heterogeneous client support}
+  \begin{itemize}
+    \item {Integrated dynamic H.264 manifest generation into the existing streaming service}
+    \item {Built the real-time transcoding pipeline to convert H.265 media segments to H.264 on-demand}
+  \end{itemize}
 \item {Solved critical reliability issues in device pairing and setup}
   \begin{itemize}
     \item {Built a custom stress testing \internalLink{tool}{\urlCastR} that connects to the devices using Bluetooth and runs the pairing protocol}
@@ -70,12 +75,6 @@
     \item Automated our live feed reliability testing
     \item Automated metrics collection (framerate, bitrate) to spot possible regression
   \end{itemize}
-\item {Designed and implemented an on-demand \internalLink{cloud transcoding}{\urlVideoTranscoding} infrastructure for heterogeneous client support}
-  \begin{itemize}
-    \item {Integrated dynamic H.264 manifest generation into the existing streaming service}
-    \item {Built the real-time transcoding pipeline to convert H.265 media segments to H.264 on-demand}
-  \end{itemize}
-  % Add an item about me writing the Event Based Recording logic in Battery product which has later been re-used in the architecture rewrite
 \item {Modernized the build and development infrastructure}
   \begin{itemize}
     \item {Ported the codebase to the GN build system (Chromium), enabling faster incremental builds}
